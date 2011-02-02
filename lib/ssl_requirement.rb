@@ -21,7 +21,7 @@ require "#{File.dirname(__FILE__)}/url_rewriter"
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 module SslRequirement
-  attr_accessor :ssl_host, :non_ssl_host
+  mattr_accessor :ssl_host, :non_ssl_host
   def self.ssl_host=(host)
     @@ssl_host = host
   end
@@ -31,7 +31,7 @@ module SslRequirement
 
   
 
-  attr_writer :disable_ssl_check, :ssl_all
+  mattr_writer :disable_ssl_check, :ssl_all
   def self.disable_ssl_check?
     @@disable_ssl_check ||= false
   end
