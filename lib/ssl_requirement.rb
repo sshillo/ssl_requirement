@@ -28,16 +28,7 @@ module SslRequirement
   def self.non_ssl_host=(host)
     @@non_ssl_host = host
   end
-
-  
-
-  mattr_writer :disable_ssl_check, :ssl_all
-  def self.disable_ssl_check?
-    @@disable_ssl_check ||= false
-  end
-  def self.ssl_all?
-    @@ssl_all ||= false
-  end
+d
 
   # called when Module is mixed in
   def self.included(controller)
