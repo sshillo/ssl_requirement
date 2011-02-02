@@ -22,6 +22,14 @@ require "#{File.dirname(__FILE__)}/url_rewriter"
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 module SslRequirement
   mattr_accessor :ssl_host, :non_ssl_host
+  def self.ssl_host=(host)
+    @@ssl_host = host
+  end
+  def self.non_ssl_host=(host)
+    @@non_ssl_host = host
+  end
+
+  
 
   mattr_writer :disable_ssl_check, :ssl_all
   def self.disable_ssl_check?
