@@ -49,8 +49,8 @@ module SslRequirement
     def ensure_proper_protocol
       return true if ssl_allowed?
 
-      if ssl_required? && !request.ssl?
-        redirect_to "https://" + request.host + request.request_uri
+      if ssl_required? && !request.ssl? 
+        redirect_to "https://" + ENV['SSL_DOMAIN'] || request.host + request.request_uri
         flash.keep
         return false
       elsif request.ssl? && !ssl_required?
